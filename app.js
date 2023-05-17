@@ -1,6 +1,7 @@
 const { argv } = require('process');
 const moduloTareas = require('./tareas');
 let respuesta;
+colors = require('colors')
 
 
 switch (argv[2]) {
@@ -10,7 +11,7 @@ switch (argv[2]) {
 
     case "agregar":
         if ([argv[3], argv[4]].includes(undefined)) {
-            console.log("Error: el numero y titulo de la clase son obligatorios");
+            console.log("Error: el numero y titulo de la clase son obligatorios".green);
             break
         }
         if (isNaN(argv[3]) || argv[3] < 1) {

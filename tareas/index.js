@@ -1,11 +1,12 @@
 const { leerJSON, escribirJSON } = require('../data')
 const Tarea = require('./Tarea')
+colors = require('colors')
 
 module.exports = {
     tareas: leerJSON(),
     listar: function (tareas = this.tareas) {
         tareas.forEach(({ clase, titulo, estado }) => {
-            console.log(`CLASE: ${clase}: ${titulo} --> ${estado}`);
+            console.log(`CLASE: ${clase}: ${titulo} --> ${estado}`.red);
         });
     },
     agregar: function (clase, titulo) {
